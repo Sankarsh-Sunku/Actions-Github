@@ -17,3 +17,14 @@ jobs:
 
                               [1]: https://github.com/peter-evans/create-or-update-comment
                            reactions: '+1'
+     comment-job2:
+                  runs-on: ubuntu-latest
+                  steps:
+                     - name: comment on the issue using api
+                       run: |
+                          gh api -X post $PR_URL -f body=" Comment is done by the API "
+                       env: 
+                           GITHUB_TOKEN : ${{secrets.GITHUB_TOKEN}}
+                           PR_URL : ${{github.event.issues.html_url}}
+                           
+                 
