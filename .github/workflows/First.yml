@@ -7,7 +7,7 @@ jobs:
                  runs-on: ubuntu-latest
                  steps:
                     - name: github-event
-                      run: echo "${{ toJSON(github.event)}}" | jq
+                      run: echo '${{ toJSON(github.event)}}' | jq
                       shell: bash
      comment-job1: 
                  runs-on: ubuntu-latest
