@@ -2,7 +2,12 @@ name: Comment on the issues open
 on:
    issues: 
           types: [opened]
-jobs: 
+jobs:
+     comment-job :
+                 runs-on: ubuntu-latest
+                 steps:
+                    - name: github-event
+                      run: echo "${{ toJSON(github.event)}}" | jq
      comment-job1: 
                  runs-on: ubuntu-latest
                  steps:
