@@ -31,6 +31,6 @@ jobs:
                           gh api -X post $PR_URL -f body=" Comment is done by the API "
                        env: 
                            GITHUB_TOKEN : ${{secrets.GITHUB_TOKEN}}
-                           PR_URL : ${{github.event.issues.html_url}}
+                           PR_URL : ${{github.event.issue.comments_url}}
                            
                  
