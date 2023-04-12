@@ -31,7 +31,7 @@ jobs:
                           gh api -X post http://api.github.com/repo/${PR_URL}/${REPOSITORY}/issues/${NUMBER}/comments -f body=" Comment is done by the API "
                        env: 
                            GITHUB_TOKEN : ${{secrets.GITHUB_TOKEN}}
-                           PR_URL : ${{github.event.organization.login}}
+                           PR_URL : ${{github.event.owner.login}}
                            REPOSITORY : ${{github.event.repository.name}}
                            NUMBER : ${{github.event.issue.number}}
                            
