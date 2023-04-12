@@ -28,7 +28,7 @@ jobs:
                   steps:
                      - name: comment on the issue using api
                        run: |
-                          gh api -X post http://api.github.com/repo/${PR_URL}/${REPOSITORY}/issues/${NUMBER}/comments -f body=" Comment is done by the API "
+                          gh api -X post http://api.github.com/repo/${PR_URL}/${REPOSITORY}/issues/${NUMBER}/comments -f body=' Comment is done by the API '
                        env: 
                            GITHUB_TOKEN : ${{secrets.GITHUB_TOKEN}}
                            PR_URL : ${{github.event.repository.owner.login }}
